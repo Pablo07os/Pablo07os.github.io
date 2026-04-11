@@ -1,0 +1,45 @@
+body {
+    background-color: rgba(139, 124, 124, 0.361);
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+
+}
+
+table {
+    /* background-color: white; */
+    justify-content: center; 
+    width: 700px;
+    color: black;
+    font-weight: 700;
+    margin: auto;
+    margin-top: 75px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+table tr { 
+    background-color: rgb(209, 206, 206);
+    height: 60px; 
+    /* padding: 80px; */
+    font-size: 14px;
+}
+
+table tr td {
+    padding: 10px 55px;
+    text-align: center; 
+
+}
+
+.titulo{
+    background-color: brown;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.semestre{
+    background-color: rgb(198, 99, 99);
+    color: aliceblue;
+    gap: 10;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
