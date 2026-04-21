@@ -5,14 +5,24 @@
 } 
 
 :root {
-  --background-main: #13062d;
-  --background2: #31136d; 
-  --backgroundCards: #190839; 
-  --detailsSite: #d22d48; 
-  --fontColorPrincipal: #efeafb;
-  --fontcolorSecundaria: #e0d5f6; 
+  
+  --background-main: #0f172a;   
+  --background-secondary: #1e293b; 
+  --background-cards: #111827;   
+  --font-color-primary: #f9fafb;   
+  --font-color-secondary: #cbd5e1; 
 
+  /* Destaques (accent) */
+  --accent-color: #3b82f6;       
+  --accent-hover: #2563eb;
+  --border-color: #334155;
+  --divider-color: #1f2937;
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.2);
 
+  /* Estados */
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
 }
 
 html {
@@ -25,25 +35,26 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 
 /* HEADER  */
 
 header { 
-  background-color: var(--background2);
-  min-height: 80px;
+  background-color: var(--background-main);
+  color: var(--font-color-primary);
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
 .eu {
-   background-color: var(--background2);
-   height: 50%;
+   /* height: 50%; */
    width: 40%;
-   padding: 10px; 
+   padding: 15px; 
+   font-size: 12px;
 }
 
 header h1 {
@@ -61,9 +72,7 @@ header p {
 
 header nav {
   display: flex;
-  font-size: 22px;
-  font-weight: 600;
-  gap: 20px;
+  font-size: 16px;
   width: 40%;
   justify-content: space-evenly;
   padding: 10px;
@@ -71,13 +80,27 @@ header nav {
 
 header nav a {
   text-decoration: none;
-  color: var(--fontColorPrincipal);
-  transition: 0.4s;
+  color: var(--font-color-primary);
+  letter-spacing: 0.8px;
+  position: relative;
 }
 
-header nav a:hover {
-  transform: scale(1.1);
-  color: rgb(231, 125, 125);
+header nav a::after{
+  position: absolute;
+  content: "";
+  left: 0; 
+  bottom: -5px;
+  background-color: var(--font-color-secondary);
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
 }
 
 /* SOBRE  */
@@ -85,29 +108,65 @@ header nav a:hover {
 main{
   display: flex;
   height: 90vh;
+  margin-bottom: 150px;
 }
 
 main article{
   width: 55%;
+  margin: auto 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloco_article {
+  /* background-color: cyan; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
 }
 
 article h2 {
-  text-align: center;
-  margin: 70px 0px 40px; 
-  font-weight: bolder;
-  color: var(--fontColorPrincipal);
+  display: flex;
+  color: var(--font-color-primary);
+  background-color: var(--background-main);
+  width: 100%;
+  min-height: 10vh;
+  text-align: left;
+  align-items: center;
+  font-size: 52px;
+  letter-spacing: 2px;
+
 }
 
 article p {
   text-align: left;
-  margin: auto 6%;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--fontcolorSecundaria);
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 1.6;
+  color: var(--font-color-secondary);
+  background-color: var(--background-main);
 }
 
-.dev {
+article button {
+  background-color: var(--background-main);
+  color: var(--font-color-primary);
+  width: 20%;
+  padding: 15px 10px;
+  margin: 10px 0px;
+  border: solid 4px var(--border-color);
+  transition: 0.6s ease;
+}
+
+article button:hover {
+  background-color: var(--font-color-primary);
+  color: black; 
+  border: solid 4px var(--accent-color);
+
+}
+
+/* .dev {
   height: 50%;
   width: 100%;
   display: flex;
@@ -170,7 +229,7 @@ article p {
 .dev-card a:hover{
   background-color: var(--detailsSite);
   color: whitesmoke;
-}
+} */
 
 /* lado direito  */
 
@@ -184,7 +243,7 @@ aside img {
   max-width: 100%;
   height: 80%;
   margin: auto;
-  box-shadow: 0px 4px 10px rgb(72, 11, 72);
+  box-shadow: 0px 4px 1px var(--accent-color);
 }
 
 
@@ -192,28 +251,46 @@ aside img {
 /* PROJETOS  */
 
 #projetos {
-  background-color: var(--background-main);
+  background-color: var(--background-secondary);
   min-height: 100vh;
   width: 100%;
   text-align: center; 
-  margin: 60px 0px;
+  margin: 30vh 0vh 0vh;
 
 } 
 
-#projetos h2 {
+.div_projetos {
+  display: flex;
+  justify-content: start;
+  align-items: end;
+  /* background-color: red; */
+  width: 80%;
+  margin: 0px auto;
+  height: 10vh;
+}
+
+.div_projetos h2 {
+  display: flex;
+  justify-content: start;
+  align-items: end;
   min-height: 10vh;
-  margin-bottom: 20px;
-  color: var(--fontColorPrincipal);
+  width: 75%; 
+  color: var(--font-color-primary); 
+  font-size: 32px;
+  letter-spacing: 2px;
+
+
 } 
 
 
 .projetos-card {
-  background-color: var(--background-main);
+  background-color: var(--background-secondary);
   display: flex;  
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  padding: 50px 20px;
+  padding: 30px;
+  height: 70vh;
 
 }
 
@@ -221,13 +298,13 @@ aside img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--backgroundCards);
+  background-color: var(--background-main);
   border: solid 1px transparent;
-  border-radius: 1px;
-  box-shadow: 0px 2px 15px var(--detailsSite); 
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px var(--accent-color); 
   transition: 0.4s;
   width: 300px;
-  max-height: 370px;
+  max-height: 200vh;
   padding: 30px; 
 }
 
@@ -236,22 +313,22 @@ aside img {
 }
 .card-image{
   width: 100%;
-  height: 180px;
-  padding: 10px 0px;
+  height: 200px;
+  padding: 0px;
   overflow: hidden;
 }
 
 .card-image img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
-  height: 100%; 
+  height: 80%; 
 
 }
 
 
 .card h3 {
-  font-size: 20px;
-  color: var(--fontColorPrincipal);
+  font-size: 16px;
+  color: var(--font-color-secondary);
   text-align: start;
   padding: 2px 0 ;
   cursor: pointer;
@@ -264,7 +341,7 @@ aside img {
   cursor: pointer;
   font-size: 16px;
   padding: 2px 0;
-  color: var(--fontcolorSecundaria);
+  color: var(--font-color-secondary);
 }
 
 .links {
@@ -281,8 +358,8 @@ aside img {
    font-size: 16px;
    font-weight: 600;
    bottom: 0;
-   color: white;
-   background-color: var(--detailsSite);
+   color: var(--font-color-primary);
+   background-color: var(--border-color);
    transition: 0.4s ;
 }
 
@@ -290,11 +367,106 @@ aside img {
   background-color: var(--backgroundCards);
 }
 
+
 /* CONTATO  */
 
-#contato {
+#faleComigo {
+  background-color: var(--background-main);
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faleComigo_Container {
+  width: 90%;
+  min-height: 70vh;
+  display: flex;
+}
+
+.faleComigo_Container .left-side {
+  background-color: var(--background-main);
+  width: 50%;
+}
+
+.left-side h3 {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  min-height: 45%;
+  width: 100%; 
+  color: var(--font-color-primary); 
+  font-size: 44px;
+  letter-spacing: 2px;
+}
+
+.left-side p {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  color: var(--font-color-secondary);
+
+}
+
+.faleComigo_Container .right-side {
+  width: 50%;
+}
+
+.right-side form {
+  background-color: var(--background-main);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  height: 100%;
+  gap: 18px;
+}
+
+input[type="text"] {
+  height: 2.5rem;
+  width: 60%;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: none; 
+  border-bottom: solid 0.1px white;
+  font-size: 18px;
+}
+
+input[type="submit"]{
+  width: 20%;
+  min-height: 10%; 
+  margin: 10px 0px;
+  padding: 0.2rem;
+  background-color: transparent;
+  border: solid 4px var(--border-color);
+  color: white; 
+  font-size: 16px; 
+  letter-spacing: 0.8px;
+  transition: 1s all;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+  color: var(--background-cards);
+  border: solid 4px var(--accent-color);
+}
+
+
+
+/* CONTATO  */
+
+/* #contato {
   text-align: center;
   padding: 20px 10px;
+  background-color: white;
+  min-height: 70vh;
+  
 }
 
 #contato h2 {
@@ -317,16 +489,108 @@ aside img {
 
 .contatos i {
   margin: 0px 5px;
-}
+} */
 
-
-/* FOOTER  */
 
   footer {
-      background-color: var(--background2);
+      background-color: var(--background-main);
       color: var(--fontColorPrincipal);
-      text-align: center;
-      padding: 2rem;
+      padding: 1rem;
+      min-height: 30vh;
       font-size: 0.85rem;
       border-top: 1px solid #1e293b;
-    }
+  }
+
+  .contato-container {
+    background-color: transparent;
+    min-height: 30vh;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right" "bottom bottom";
+    gap: 0px; 
+  }
+
+  .contatos-left{
+    grid-area: left;
+    background-color:var(--background-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .titulo-contato {
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    color: white;
+  }
+
+  .links-contato {
+     background-color: var(--background-main);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     min-height: 60px;
+     gap: 40px;
+  }
+
+  .links-contato a {
+    /* background-color: cadetblue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7%;
+    height: 80%;
+  }
+
+  .icon-instagram{
+    border-radius: 50%;
+  background: linear-gradient(45deg, 
+    #feda75, 
+    #fa7e1e, 
+    #d62976, 
+    #962fbf, 
+    #4f5bd5
+  );  
+}
+  .icon-linkedin{
+    border-radius: 50%; 
+    background-color: #0A66C2;
+  }
+
+  .links-contato i {
+    color: white;
+    font-size: 22px;
+  }
+
+  .contatos-right{
+    grid-area: right;
+    background-color: var(--background-main); 
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding: 20px;
+  }
+
+  .contatos-right a {
+    background-color: var(--background-cards);
+    padding: 15px 8px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border: solid 4px var(--border-color);
+    border-radius: 10px;
+  }
+
+  .contatos-bottom{
+    grid-area: bottom;
+    margin: 5px 230px;
+    color: var(--font-color-secondary);
+    font-size: 16px;
+    
+  
+  }
+

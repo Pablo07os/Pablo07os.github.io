@@ -10,7 +10,7 @@
 </head>
 <body>
  <!-- HEADER -->
-  <header>
+  <header id="nav">
     <div class="eu">
       <h1>Pablo Oliveira</h1>
     <p>Desenvolvedor em Formação | Front-end & Mobile</p>
@@ -20,21 +20,23 @@
     <nav>
       <a href="#sobre">Sobre</a>
       <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
+      <a href="#faleComigo">Fale Comigo</a>
+      <a href="#contato">Contatos</a>
     </nav>
   </header>
 
   <!-- SOBRE -->
   <main id="sobre">
     <article>
-      <h2>Sobre mim</h2>
+      <div class="bloco_article">
+        <h2>Pablo Oliveira</h2>
     <p>
       Sou estudante de Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia
-      e em constante evolução como desenvolvedor. Tenho foco em desenvolvimento web e
-      busco minha primeira oportunidade na área.
+      e em constante evolução como desenvolvedor. Tenho foco e experiência em desenvolvimento web e mobile. 
     </p>
+    <button>Fale Comigo<a href=""></a></button>
 
-    <div class="dev">
+    <!-- <div class="dev">
       <div class="dev-card">
           <img src="src/imagens/eteclogo.png" alt="">
           <div class="info">
@@ -53,9 +55,11 @@
       </div>
       
         
-    </div>
+    </div> -->
 
 
+      </div>
+    
     </article>
     
     <aside>
@@ -65,13 +69,15 @@
 
   <!-- PROJETOS -->
   <section id="projetos">
-  <h2>Projetos</h2>
+    <div class="div_projetos">
+        <h2>Projetos</h2>
+    </div>
 
   <div class="projetos-card">
 
     <div class="card">
       <div class="card-image">
-        <img src="src/imagens/logobr.png" alt="Projeto Brasileirão">
+        <img src="src/imagens/brlogo.png" alt="Projeto Brasileirão">
       </div>
 
       <h3>Tabela Brasileirão</h3>
@@ -114,20 +120,51 @@
   </div>
 </section>
 
-  <!-- CONTATO -->
-  <section id="contato">
-    <h2>Contato</h2>
-    <div class="contatos">
-    <p> <i class="bi bi-envelope"></i>pablo.profisi@gmail.com </p>
-    <p> <i class="bi bi-linkedin"></i>linkedin.com/in/pablooliveira</p>
-    <p> <i class="bi bi-github"></i>github.com/PabloOs07</p>
+  <!-- FALE COMIGO -->
+  <section id="faleComigo">
+    <div class="faleComigo_Container">
+         <div class="left-side">
+             <h3>Get in Touch</h3>
+             <p>Entre em contato
+             </p>
+         </div>
+         <div class="right-side">
+            <form action="/" method="post">
+              <input type="text" class="input-text" placeholder="Nome">
+              <input type="text" class="input-text" placeholder="Email">
+              <input type="text" class="input-text" placeholder="Assunto">
+              <input type="submit" value="Enviar">
+            </form>
+         </div>
     </div>
 
   </section>
 
   <!-- FOOTER -->
-  <footer>
-      <p>© 2026 Pablo Oliveira — Uma das criações das ruas de São Paulo</p>
+  <footer id="contato">
+    <div class="contato-container">
+
+      <div class="contatos-left">
+        <div class="titulo-contato">
+          <h3> Me acompanhe </h3>
+        </div>
+        <div class="links-contato">
+          <a class="icon-email" href="#"> <i class="bi bi-envelope"></i></a>
+          <a class="icon-instagram href="#"> <i class="bi bi-instagram"></i></a>
+          <a class="icon-github" href="#"> <i class="bi bi-github"></i></a>
+          <a class="icon-linkedin" href="#"> <i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="contatos-right">
+          <a href="#nav"> Voltar ao topo<i class="bi bi-arrow-up"></i></a>
+      </div>
+
+      <div class="contatos-bottom">
+        <p>© 2026 Pablo Oliveira — Uma das criações das ruas de São Paulo</p>
+      </div>
+
+    </div>
   </footer>
 </body>
 </html>
