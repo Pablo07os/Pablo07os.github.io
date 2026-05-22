@@ -1,8 +1,8 @@
 // Dados dos times (adicione quantos quiser)
 const times = [
-    { nome: "Santos", imagem: "/imagens/corinthaians.png" },
     { nome: "Corinthians", imagem: "/imagens/corinthians.png" },
-    { nome: "Flamengo", imagem: "/imagens/corinthians.png" }
+    { nome: "Corinthians", imagem: "/imagens/corinthians.png" },
+    { nome: "Corinthians", imagem: "/imagens/corinthians.png" }
 ];
 
 let currentIndex = 0;
